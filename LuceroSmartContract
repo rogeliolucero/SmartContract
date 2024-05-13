@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.12 <0.9.0;
+
+//Module  1 Smart Contract Project
+//Write a smart contract that implements the require ,assert,and revert statement.
+contract SmartContractLucero {
+    uint public lucerovalue;
+
+  
+    //on this contract , I have name a function,setlucerovalue that takes an input_value
+    function setlucerovalue(uint _Value) external {
+        
+         //This statement check if the input value is not greater than 200.
+        //If it is less than 200,it throws an exception with the provided error message.
+        require(_Value >=200, "value should be greater than 200");
+        
+       //this statement validates a condition and will throw an error if it evaluates to false.
+        //also in this case,it verifies that _value is greater than or equal to 200.
+        assert(_Value >=200); 
+        
+        
+        //this statement is used to exit the function execution and revert any changes made before calling this function if a certain condition is meet.
+        //here,we check if _value exceeds 3000, in which case we throw an exception with the specified error message.
+        if (_Value >= 3000) 
+        {
+            revert("Value cannot be greater than 3000");
+        }
+
+        lucerovalue =_Value;
+    }
+}
