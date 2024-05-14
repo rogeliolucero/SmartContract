@@ -10,13 +10,13 @@ contract SmartContractLucero {
 
     function setlucerovalue(uint _Value) external {
         
-        require(_Value >=200, "value should be greater than 200");
+        require(_Value <=1000, "value should be maximum of 1000");
 
-        assert(_Value >=200); 
+        assert(_Value <=1000); 
         
-        if (_Value >= 3000) 
+        if (_Value >= 100) 
         {
-            revert("Value cannot be greater than 3000");
+            revert("Value should be minimum of 200");
         }
 
         lucerovalue =_Value;
