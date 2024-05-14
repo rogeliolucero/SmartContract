@@ -6,15 +6,15 @@ pragma solidity >=0.6.12 <0.9.0;
 contract SmartContractLucero {
     uint public lucerovalue;
 
-    function setlucerovalue(uint _Value) external {
+    function deposit lucerovalue(uint _Value) external {
         
-        require(_Value <=1000, "value should be maximum of 1000");
+        require(_Value >=200, "value should be minimum of 200");
 
-        assert(_Value <=1000); 
+        assert(_Value >=200); 
         
-        if (_Value >= 100) 
+        if (_Value <=5000) 
         {
-            revert("Value should be minimum of 200");
+            revert("Value should be maximum of 200");
         }
 
         lucerovalue =_Value;
