@@ -1,23 +1,22 @@
 
-# Code
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.12 <0.9.0;
 
+
 contract SmartContractLucero {
-    uint public lucerovalue;
+    uint public depositvalue;
 
-    function deposit lucerovalue(uint _Value) external {
-        
-        require(_Value >=200, "value should be minimum of 200");
+function deposit (uint _Value) external {
+    
+    require(_Value >=200, "value should be minimum of 200");
 
-        assert(_Value >=200); 
-        
-        if (_Value <=5000) 
-        {
-            revert("Value should be maximum of 200");
-        }
-
-        lucerovalue =_Value;
+    assert(_Value >=200); 
+    
+    if (_Value >=5000) 
+    {
+        revert("Value should be maximum of 5000");
     }
+
+    depositvalue =_Value;
 }
 
